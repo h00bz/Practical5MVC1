@@ -15,6 +15,11 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        var longTime= DateTime.Now.ToLongTimeString();
+        var message= "Time Now";
+
+        ViewBag.LongTime=longTime;
+        ViewBag.Message=message;
         return View();
     }
 
@@ -27,5 +32,14 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+        public IActionResult About()
+    {
+        var about= new AboutViewModel();
+        about.Title="About page";
+        about.Message="This is the about page";
+        about.Formed= new DateTime(2022,1,1);
+        return View (about);
     }
 }

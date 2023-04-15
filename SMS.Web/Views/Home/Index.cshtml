@@ -1,8 +1,11 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div><a href="/home/about">About</a> <a href="/home/privacy">Privacy</a></div>
+<div>
+    <h1>Home Page</h1>
+    <p>This is the default page displayed when the application loads</p>
+    <p>Today is <b>@DateTime.Now.ToLongDateString()</b></p>
 </div>
+<div class="text-center"><p>Let's Try @ViewBag.Message is @ViewBag.LongTime</p></div>
+<a href="/home/about">About Page</a>
